@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bos40fenjvy7t"]
+
+[ext_resource type="Script" uid="uid://cd0wpdyulwlqa" path="res://elements/finish/finish.gd" id="1_mwdse"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v8siw"]
+radius = 19.0
+
+[node name="Finish" type="Area2D" unique_id=1788048407]
+collision_layer = 2
+script = ExtResource("1_mwdse")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1118976324]
+shape = SubResource("CircleShape2D_v8siw")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

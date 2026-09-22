@@ -1,0 +1,75 @@
+[gd_scene format=4 uid="uid://cd3k6de38ash4"]
+
+[ext_resource type="Script" uid="uid://cdydvkb4spre4" path="res://elements/test.gd" id="1_67r0o"]
+[ext_resource type="PackedScene" uid="uid://bi23skj14ey1w" path="res://elements/player/player.tscn" id="1_jem5c"]
+[ext_resource type="PackedScene" uid="uid://bgpqi038750tv" path="res://assets/shaders/crt-shader.tscn" id="2_e5hkl"]
+[ext_resource type="PackedScene" uid="uid://c73w1eyhpq2d7" path="res://elements/layout/layout.tscn" id="2_mgpb8"]
+[ext_resource type="PackedScene" uid="uid://bg14tq43reqxy" path="res://elements/camera/camera.tscn" id="4_m7kdi"]
+[ext_resource type="PackedScene" uid="uid://bvxkci1jpjv73" path="res://elements/float_area/float_area.tscn" id="5_tqwp0"]
+[ext_resource type="PackedScene" uid="uid://e3yx4muftuec" path="res://elements/jump_pad/jump_pad.tscn" id="6_wkey2"]
+[ext_resource type="PackedScene" uid="uid://dw35xxu7mr8oq" path="res://elements/zone/zone.tscn" id="8_3fcsv"]
+[ext_resource type="PackedScene" uid="uid://bos40fenjvy7t" path="res://elements/finish/finish.tscn" id="9_bt1re"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0f120"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tqwp0"]
+size = Vector2(96, 224.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e5hkl"]
+size = Vector2(268, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bt1re"]
+size = Vector2(32, 222)
+
+[node name="Test" type="Node2D" unique_id=1357254353]
+script = ExtResource("1_67r0o")
+
+[node name="shader" parent="." unique_id=1001551369 instance=ExtResource("2_e5hkl")]
+
+[node name="Ground" type="StaticBody2D" parent="." unique_id=2060513160]
+collision_layer = 2
+
+[node name="CollisionGround" type="CollisionShape2D" parent="Ground" unique_id=1500471515]
+position = Vector2(385, 647)
+shape = SubResource("WorldBoundaryShape2D_0f120")
+
+[node name="Player" parent="." unique_id=692060850 instance=ExtResource("1_jem5c")]
+position = Vector2(723, 307)
+jump_time_to_peak = 0.5
+jump_time_to_descend = 0.4
+
+[node name="TileMapLayer" parent="." unique_id=83172690 instance=ExtResource("2_mgpb8")]
+position = Vector2(-1, 0)
+scale = Vector2(2, 2)
+tile_map_data = PackedByteArray("AAADAAAAAAAEAAAAAAADAAEAAAAEAAEAAAADAAIAAAAEAAEAAAADAAMAAAAEAAEAAAADAAQAAAAEAAEAAAADAAUAAAAEAAEAAAADAAYAAAAEAAEAAAADAAcAAAAEAAEAAAADAAgAAAAEAAEAAAADAAkAAAAEAAEAAAADAAoAAAAEAAEAAAADAAsAAAAEAAEAAAADAAwAAAAEAAEAAAADAA0AAAAEAAEAAAADAA4AAAAEAAEAAAADAA8AAAAEAAEAAAADABAAAAAEAAEAAAADABEAAAAEAAEAAAADABIAAAAEAAEAAAAIAA8AAAAAAAQAAAAJAA8AAAABAAQAAAAKAA8AAAABAAQAAAALAA8AAAABAAQAAAAMAA8AAAABAAQAAAANAA8AAAABAAIAAAANAA4AAAAAAAEAAAAOAA8AAAABAAIAAAAPAA8AAAABAAIAAAAQAA8AAAABAAIAAAARAA8AAAABAAIAAAASAA8AAAABAAIAAAATAA8AAAABAAIAAAAUAA8AAAABAAIAAAANAA0AAAAAAAAAAAAOAA0AAAABAAAAAAAPAA0AAAABAAAAAAAQAA0AAAABAAAAAAARAA0AAAABAAAAAAASAA0AAAABAAAAAAATAA0AAAABAAAAAAAUAA0AAAABAAAAAAAOAA4AAAABAAEAAAAPAA4AAAABAAEAAAAQAA4AAAABAAEAAAARAA4AAAABAAEAAAASAA4AAAABAAEAAAATAA4AAAABAAEAAAAUAA4AAAABAAEAAAAVAA4AAAABAAEAAAAWAA4AAAABAAEAAAAXAA4AAAABAAEAAAAYAA4AAAABAAEAAAAZAA4AAAABAAEAAAAVAA0AAAABAAAAAAAWAA0AAAABAAAAAAAXAA0AAAABAAAAAAAYAA0AAAABAAAAAAAZAA0AAAABAAAAAAAVAA8AAAABAAIAAAAWAA8AAAABAAIAAAAXAA8AAAABAAIAAAAYAA8AAAABAAIAAAAZAA8AAAABAAIAAAAaAA0AAAACAAAAAAAaAA8AAAABAAIAAAAaAA4AAAABAAEAAAADABMAAAAEAAEAAAADABQAAAAEAAIAAAAbAA8AAAABAAIAAAAcAA8AAAABAAIAAAAdAA8AAAABAAIAAAAeAA8AAAABAAIAAAAfAA8AAAABAAIAAAAgAA8AAAABAAIAAAAhAA8AAAACAAIAAAAbAA4AAAABAAAAAAAcAA4AAAABAAAAAAAdAA4AAAABAAAAAAAeAA4AAAABAAAAAAAfAA4AAAABAAAAAAAgAA4AAAABAAAAAAAhAA4AAAACAAAAAAAYAAYAAAAAAAQAAAAZAAYAAAABAAQAAAAaAAYAAAABAAQAAAAbAAYAAAABAAQAAAAcAAYAAAABAAQAAAAdAAYAAAABAAQAAAAeAAYAAAABAAQAAAAfAAYAAAABAAQAAAAgAAYAAAABAAQAAAAhAAYAAAABAAQAAAAiAAYAAAACAAQAAAAHAAUAAAAAAAQAAAAIAAUAAAABAAQAAAAJAAUAAAABAAQAAAAKAAUAAAABAAQAAAAMAAIAAAAEAAEAAAAMAAMAAAACAAIAAAAMAAEAAAAEAAEAAAAMAP3/AAAEAAEAAAAMAP7/AAAEAAEAAAAMAP//AAAEAAEAAAAMAAAAAAAEAAEAAAAMAPz/AAAEAAEAAAAMAPb/AAAEAAEAAAAMAPf/AAAEAAEAAAAMAPj/AAAEAAEAAAAMAPn/AAAEAAEAAAAMAPr/AAAEAAEAAAAMAPv/AAAEAAEAAAAMAPX/AAAEAAAAAAALAAUAAAACAAIAAAALAAMAAAAAAAAAAAALAAQAAAAEAAEAAAAMAAQAAAAEAAAAAAAMAAUAAAAEAAIAAAA=")
+
+[node name="Camera" parent="." unique_id=2125870191 node_paths=PackedStringArray("player") instance=ExtResource("4_m7kdi")]
+limit_left = -100
+player = NodePath("../Player")
+player_size = 30.0
+max_offset = 0.25
+offset_speed = 0.1
+
+[node name="FloatArea" parent="." unique_id=136079929 instance=ExtResource("5_tqwp0")]
+z_index = -1
+position = Vector2(487, 307)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FloatArea" unique_id=658912634]
+position = Vector2(-23, -2.875)
+shape = SubResource("RectangleShape2D_tqwp0")
+
+[node name="JumpPad" parent="." unique_id=349837925 instance=ExtResource("6_wkey2")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="JumpPad" unique_id=1769782326]
+position = Vector2(964, 192)
+shape = SubResource("RectangleShape2D_e5hkl")
+
+[node name="Zone" parent="." unique_id=877742389 instance=ExtResource("8_3fcsv")]
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Zone" unique_id=190872711]
+position = Vector2(986, 340)
+shape = SubResource("RectangleShape2D_bt1re")
+
+[node name="Finish" parent="." unique_id=861104781 instance=ExtResource("9_bt1re")]
+position = Vector2(444, -135)

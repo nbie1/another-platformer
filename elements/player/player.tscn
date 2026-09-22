@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://bi23skj14ey1w"]
+
+[ext_resource type="Script" uid="uid://ca0me1x280udc" path="res://elements/player/player.gd" id="1_ktrpi"]
+[ext_resource type="Script" uid="uid://cbt7mrvb1v4b7" path="res://utilities/state_management/state_machine.gd" id="2_lh3fu"]
+[ext_resource type="Shader" uid="uid://d1d0ydg2bb7pk" path="res://assets/shaders/glow.gdshader" id="2_nd2p5"]
+[ext_resource type="Script" uid="uid://d17aq55j6pp4s" path="res://elements/player/player_states/idle_state.gd" id="3_h2kxm"]
+[ext_resource type="Texture2D" uid="uid://bfuabc6fyrof5" path="res://elements/player/player.png" id="3_nd2p5"]
+[ext_resource type="Script" uid="uid://citx7iknqjpwm" path="res://elements/player/player_states/move_state.gd" id="4_yd248"]
+[ext_resource type="Script" uid="uid://dys3ms7tao2t5" path="res://elements/player/player_states/jump_state.gd" id="5_2sqnu"]
+[ext_resource type="Script" uid="uid://c1sx3n3ptwnmy" path="res://elements/player/player_states/fall_state.gd" id="6_nd2p5"]
+[ext_resource type="Script" uid="uid://tewh8fon8vah" path="res://elements/player/player_states/slide_state.gd" id="7_yd248"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nd2p5"]
+shader = ExtResource("2_nd2p5")
+shader_parameter/glow_color = Color(1, 1, 1, 1)
+shader_parameter/glow_power = 3.20000004768384
+shader_parameter/glow_shift = 3.20000004768384
+shader_parameter/glow_radius = 6.70000008493684
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h2kxm"]
+radius = 7.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nd2p5"]
+size = Vector2(24, 24)
+
+[node name="Player" type="CharacterBody2D" unique_id=692060850]
+collision_mask = 6
+script = ExtResource("1_ktrpi")
+max_speed = 350.0
+jump_height = 150.0
+max_air_jumps = 1
+wall_jump_force = 400.0
+wall_jump_coyote_time = 0.1
+sliding_factor = 0.1
+squish_and_stretch_speed = 1.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1450147306]
+material = SubResource("ShaderMaterial_nd2p5")
+position = Vector2(0, -15)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_nd2p5")
+
+[node name="TileHitbox" type="CollisionShape2D" parent="." unique_id=109580801]
+position = Vector2(-8, -15)
+shape = SubResource("CapsuleShape2D_h2kxm")
+
+[node name="TileHitbox2" type="CollisionShape2D" parent="." unique_id=628315762]
+position = Vector2(8, -15)
+shape = SubResource("CapsuleShape2D_h2kxm")
+
+[node name="StateMachine" type="Node" parent="." unique_id=957935678 node_paths=PackedStringArray("initial_state")]
+script = ExtResource("2_lh3fu")
+initial_state = NodePath("Fall")
+disabled = false
+
+[node name="Idle" type="Node" parent="StateMachine" unique_id=1610783120]
+script = ExtResource("3_h2kxm")
+
+[node name="Move" type="Node" parent="StateMachine" unique_id=2067276763]
+script = ExtResource("4_yd248")
+
+[node name="Jump" type="Node" parent="StateMachine" unique_id=1326683479]
+script = ExtResource("5_2sqnu")
+
+[node name="Fall" type="Node" parent="StateMachine" unique_id=617531578]
+script = ExtResource("6_nd2p5")
+
+[node name="Slide" type="Node" parent="StateMachine" unique_id=551797336]
+script = ExtResource("7_yd248")
+
+[node name="Improvement" type="Node" parent="." unique_id=1702038453]
+
+[node name="JumpBuffer" type="Timer" parent="Improvement" unique_id=349961021]
+unique_name_in_owner = true
+wait_time = 0.1
+one_shot = true
+
+[node name="CoyoteJump" type="Timer" parent="Improvement" unique_id=650394442]
+unique_name_in_owner = true
+wait_time = 0.15
+one_shot = true
+
+[node name="hit" type="Area2D" parent="." unique_id=1822572781 groups=["player_hit"]]
+collision_layer = 8
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hit" unique_id=1596494159]
+position = Vector2(0, -15)
+shape = SubResource("RectangleShape2D_nd2p5")

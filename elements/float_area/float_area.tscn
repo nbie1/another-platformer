@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bvxkci1jpjv73"]
+
+[ext_resource type="Script" uid="uid://cfjs8i1gjlvmu" path="res://elements/float_area/float_area.gd" id="1_mhrd8"]
+
+[node name="FloatArea" type="Area2D" unique_id=1084078587]
+collision_layer = 2
+script = ExtResource("1_mhrd8")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

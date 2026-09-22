@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://e3yx4muftuec"]
+
+[ext_resource type="Script" uid="uid://dipuxmxjqqwfc" path="res://elements/jump_pad/jump_pad.gd" id="1_2umkf"]
+
+[node name="JumpPad" type="StaticBody2D" unique_id=349837925 groups=["jump_pad"]]
+collision_layer = 2
+script = ExtResource("1_2umkf")

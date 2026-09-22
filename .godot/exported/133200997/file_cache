@@ -1,0 +1,11 @@
+res://assets/shaders/crt-shader.tscn::825f6ddffe5a09099360a647ad68b538::1785065209::res://.godot/exported/133200997/export-0a42eec5de46979d04711ae5766d0375-crt-shader.scn
+res://components/trail/trail.tscn::22f92fd56bb44a837c6627e5520ff77a::1785122006::res://.godot/exported/133200997/export-1459488234e27c16c5004621b9133a19-trail.scn
+res://elements/camera/camera.tscn::3cdb307d769bc372452fedac47cddb8c::1784206606::res://.godot/exported/133200997/export-e9683f5376f14590cba6d03eb1037ee8-camera.scn
+res://elements/finish/finish.tscn::ba8c1eaca1b167003b7800edfd29b1fe::1786365863::res://.godot/exported/133200997/export-13f20b8a7fcf665c669b440bfb6007c3-finish.scn
+res://elements/float_area/float_area.tscn::7ece2152b627b5375537507cd4f3b328::1784469618::res://.godot/exported/133200997/export-73bfd4a6ecc865112f025e0df05f42b6-float_area.scn
+res://elements/jump_pad/jump_pad.tscn::3b25af65dd8cce007ff145de1bdc7320::1784470329::res://.godot/exported/133200997/export-951679bab6294b8c7068e6fa40fd1571-jump_pad.scn
+res://elements/layout/layout.tscn::9bdaf93127f0da060e12cfd8a4dbb586::1783777792::res://.godot/exported/133200997/export-514c02f8ddcf21190f2c712242137ddc-layout.scn
+res://elements/player/player.tscn::4e32dffa4cc6486a8d674b75e492fcf8::1786109765::res://.godot/exported/133200997/export-be08b9cf9a263241b84b727b8e843d48-player.scn
+res://elements/zone/zone.tscn::3f41bae75912fbd8efd488186eae800a::1786109082::res://.godot/exported/133200997/export-b9e6dc0aa4ec1549a741f330d33e5365-zone.scn
+res://elements/test.tscn::290b9dd370b9321f9f2eccd61882eb43::1786366023::res://.godot/exported/133200997/export-39df7a63194156980547dd804d06d23f-test.scn
+res://scenes/level/level.tscn::9eb641ba8161b130640e5525e146aa2e::1786105802::res://.godot/exported/133200997/export-f24fae1c75ddb1242ad1b542084e5848-level.scn

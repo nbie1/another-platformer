@@ -1,7 +1,10 @@
 78098b89c88a74ebe8c20117b8754620
-::res://::1790093748
+::res://::1793624221
+export_presets.cfg::TextFile::-1::1790095335::0::1::::<><><>0<>0<><>::
 icon.svg::CompressedTexture2D::2398352740742941988::1783560730::1790093750::1::::<><><>0<>0<>d81f99cd0e26fdb728ece4187fb32a91<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
-::res://assets/::1785119756
+::res://assets/::1793624221
+layout_tilemap.png::CompressedTexture2D::6023144483590547103::1783777696::1793624222::1::::<><><>0<>0<>ff5c68fec4dd3a88906efdfad38f53c7<>res://.godot/imported/layout_tilemap.png-243a09218bac4db2178dde7cb97bc26f.ctex::
+player1.png::CompressedTexture2D::8872761249851634852::1793624112::1793624222::1::::<><><>0<>0<>676fc0346e4e8a2b878a22b64379d0ff<>res://.godot/imported/player1.png-8c99159fbf76beb5bab90ee30dda3da9.ctex::
 ::res://assets/shaders/::1786364709
 crt-shader.tscn::PackedScene::2839506527949312271::1785065209::0::1::::<><><>0<>0<><>::uid://i33muvrsi6tg::::res://assets/shaders/crt.gdshader
 crt.gdshader::Shader::621035915246955336::1786364709::0::1::::<><><>0<>0<><>::
@@ -25,10 +28,10 @@ float_area.tscn::PackedScene::3908478290731689352::1784469618::0::1::::<><><>0<>
 ::res://elements/jump_pad/::1784684715
 jump_pad.gd::GDScript::7752994545851258724::1784684715::0::1::::<>StaticBody2D<><>0<>0<><>::
 jump_pad.tscn::PackedScene::340057775382978370::1784470329::0::1::::<><><>0<>0<><>::uid://dipuxmxjqqwfc::::res://elements/jump_pad/jump_pad.gd
-::res://elements/layout/::1783777792
-layout.tscn::PackedScene::7078069392906761410::1783777792::0::1::::<><><>0<>0<><>::uid://cr2wkr7tsgk7h::::res://elements/layout/layout_tilemap.png
-layout_tilemap.png::CompressedTexture2D::6023144483590547103::1783777696::1790093750::1::::<><><>0<>0<>193a975ede438baa5bb62b08766253d9<>res://.godot/imported/layout_tilemap.png-966e8cf87a341e8df1a14cfcdb16cdc1.ctex::
-::res://elements/player/::1786364709
+::res://elements/layout/::1793624221
+layout.tscn::PackedScene::7078069392906761410::1793624221::0::1::::<><><>0<>0<><>::uid://cr2wkr7tsgk7h::::res://assets/layout_tilemap.png
+layout_tilemap1.png::CompressedTexture2D::5280164108679069525::1793624209::1793624209::1::::<><><>0<>0<>2a62602cd2c260eac481679c3379c49e<>res://.godot/imported/layout_tilemap1.png-5f5db71a0abfaa5847b15c84b0b8ba00.ctex::
+::res://elements/player/::1793624221
 player.gd::GDScript::4825187960735980336::1786109705::0::1::::Player<>CharacterBody2D<><>0<>0<><>::
 player.gdshader::Shader::2467336181231093451::1786364709::0::1::::<><><>0<>0<><>::
 player.png::CompressedTexture2D::2778654395953934312::1784949964::1790093750::1::::<><><>0<>0<>3d5ecb1b880bdcfe451d37592307f722<>res://.godot/imported/player.png-fd229e4e80d0becd3cf495e230a7efb0.ctex::

@@ -14,12 +14,6 @@ config/name="another platformer"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
-[autoload]
-
-EventBus="*uid://dbtknuwi4lp08"
-Global="*uid://cre2ba65txw26"
-LevelManager="*uid://mvtalmj8bab1"
-
 [global_group]
 
 jump_pad=""
@@ -67,4 +61,4 @@ debug={
 
 rendering_device/driver.windows="d3d12"
 viewport/hdr_2d=true
-environment/defaults/default_clear_color=Color(0.09239703, 0.09239707, 0.09239706, 1)
+environment/defaults/default_clear_color=Color(0, 0, 0, 0)
